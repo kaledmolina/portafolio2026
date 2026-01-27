@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 7% 95%;
+    --foreground: 0 0% 7%;
+    --card: 60 7% 95%;
+    --card-foreground: 0 0% 7%;
+    --popover: 60 7% 95%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 0 0% 7%;
+    --primary-foreground: 60 7% 95%;
+    --secondary: 0 0% 43%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 60 5% 90%;
+    --muted-foreground: 0 0% 43%;
+    --accent: 0 78% 48%;
+    --accent-foreground: 60 7% 95%;
+    --destructive: 0 78% 48%;
+    --destructive-foreground: 60 7% 95%;
+    --border: 0 0% 7%;
+    --input: 0 0% 85%;
+    --ring: 0 78% 48%;
+    --radius: 0rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Typography */
+.font-heading {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Headline sizes - RESPONSIVE */
+.headline-xl {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(36px, 8vw, 140px);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.headline-lg {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 5vw, 80px);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.headline-md {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(24px, 3.5vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.headline-sm {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(20px, 2.5vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Micro labels */
+.micro-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(10px, 1vw, 12px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Body text */
+.body-text {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.body-text-sm {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(12px, 1vw, 14px);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Hairline */
+.hairline {
+  background-color: rgba(17, 17, 17, 0.22);
+}
+
+.hairline-vertical {
+  width: 1px;
+  background-color: rgba(17, 17, 17, 0.22);
+}
+
+.hairline-horizontal {
+  height: 1px;
+  background-color: rgba(17, 17, 17, 0.22);
+}
+
+/* Grain overlay */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Section base */
+.section-pinned {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-5 py-2.5 lg:px-6 lg:py-3 bg-[#111] text-[#F4F4F2] font-mono text-xs lg:text-sm uppercase tracking-wider transition-all duration-200;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-5 py-2.5 lg:px-6 lg:py-3 border border-[#111] text-[#111] font-mono text-xs lg:text-sm uppercase tracking-wider transition-all duration-200;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px) scale(1.02);
+  background-color: rgba(17, 17, 17, 0.05);
+}
+
+.btn-accent {
+  @apply inline-flex items-center justify-center px-5 py-2.5 lg:px-6 lg:py-3 bg-accent-red text-[#F4F4F2] font-mono text-xs lg:text-sm uppercase tracking-wider transition-all duration-200;
+}
+
+.btn-accent:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(216, 28, 28, 0.3);
+}
+
+/* Link underline animation */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* Service card */
+.service-card {
+  @apply border border-[#111]/20 p-4 lg:p-6 transition-all duration-300 bg-off-white/50;
+}
+
+.service-card:hover {
+  @apply border-accent-red/50;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* Project card */
+.project-card {
+  @apply relative overflow-hidden transition-all duration-500;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-card:hover .project-content {
+  transform: translateY(0);
+}
+
+/* Tech stack card */
+.tech-card {
+  @apply flex flex-col items-center justify-center p-4 lg:p-6 border border-[#111]/10 transition-all duration-300 bg-off-white;
+}
+
+.tech-card:hover {
+  @apply border-accent-red/40;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Tag */
+.tech-tag {
+  @apply inline-flex items-center px-2 py-1 lg:px-3 lg:py-1.5 text-xs font-mono uppercase tracking-wider border border-terminal-slate/20 text-terminal-slate transition-all duration-200;
+}
+
+.tech-tag:hover {
+  @apply border-accent-red text-accent-red;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F4F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #111;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D81C1C;
+}
+
+/* Selection */
+::selection {
+  background-color: #D81C1C;
+  color: #F4F4F2;
+}
+
+/* Focus states */
+*:focus-visible {
+  outline: 2px solid rgba(216, 28, 28, 0.35);
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(216, 28, 28, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(216, 28, 28, 0.4); }
+}
+
+@keyframes slide-in-left {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .section-pinned {
+    min-height: 100svh;
+  }
+  
+  .headline-xl {
+    font-size: clamp(28px, 10vw, 48px);
+    line-height: 0.95;
+  }
+  
+  .headline-lg {
+    font-size: clamp(24px, 8vw, 36px);
+  }
+  
+  .headline-md {
+    font-size: clamp(20px, 6vw, 28px);
+  }
+}
+
+/* Touch device optimizations */
+@media (pointer: coarse) {
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-accent:hover,
+  .service-card:hover,
+  .tech-card:hover {
+    transform: none;
+  }
+}
