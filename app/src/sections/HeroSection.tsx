@@ -92,9 +92,9 @@ export function HeroSection() {
           tl.fromTo(
             stat,
             { innerText: 0 },
-            { 
-              innerText: target, 
-              duration: 1.5, 
+            {
+              innerText: target,
+              duration: 1.5,
               ease: 'power2.out',
               snap: { innerText: 1 }
             },
@@ -190,26 +190,26 @@ export function HeroSection() {
   };
 
   return (
-    <section 
-      ref={sectionRef} 
+    <section
+      ref={sectionRef}
       className="section-pinned bg-off-white z-10 flex items-center"
       id="hero"
     >
       {/* Red accent panel */}
-      <div 
+      <div
         ref={redPanelRef}
         className="absolute left-0 top-0 w-full lg:w-[34vw] h-full bg-accent-red"
       />
 
       {/* Vertical hairline - hidden on mobile */}
-      <div 
+      <div
         ref={hairlineRef}
         className="hidden lg:block absolute left-[34vw] top-0 w-px h-full hairline"
       />
 
       {/* Content Container */}
       <div className="relative w-full h-full flex flex-col lg:flex-row">
-        
+
         {/* Left side - Portrait */}
         <div className="relative w-full lg:w-[34vw] h-[40vh] lg:h-full flex items-center justify-center lg:justify-start lg:pl-[6vw]">
           <img
@@ -222,64 +222,64 @@ export function HeroSection() {
 
         {/* Right side - Content */}
         <div className="flex-1 flex flex-col justify-center px-6 lg:px-0 lg:pl-[6vw] py-8 lg:py-0">
-          
+
           {/* Headline block */}
-          <div 
+          <div
             ref={headlineRef}
             className="mb-4 lg:mb-6"
           >
             <div className="headline-line headline-xl text-off-white lg:text-terminal-slate">
-              FULLSTACK
+              DESARROLLADOR
             </div>
             <div className="headline-line headline-xl text-off-white lg:text-terminal-slate">
               LARAVEL
             </div>
             <div className="headline-line headline-xl text-off-white lg:text-terminal-slate">
-              DEVELOPER
+              FULLSTACK
             </div>
           </div>
 
           {/* Subheadline - FIXED POSITION */}
-          <div 
+          <div
             ref={subheadlineRef}
             className="mb-6 lg:mb-8 max-w-md"
           >
             <p className="body-text text-off-white/90 lg:text-text-secondary">
-              I build scalable web applications with clean architecture, 
-              robust APIs, and modern frontend experiences. Specialized in 
-              Laravel, Flutter, and cloud-native solutions.
+              Construyo aplicaciones web escalables con arquitectura limpia,
+              APIs robustas y experiencias frontend modernas. Especializado en
+              Laravel, Flutter y soluciones nativas en la nube.
             </p>
           </div>
 
           {/* CTA row */}
-          <div 
+          <div
             ref={ctaRef}
             className="flex flex-wrap items-center gap-3 lg:gap-6 mb-6 lg:mb-8"
           >
-            <button 
+            <button
               onClick={scrollToWork}
               className="btn-primary flex items-center gap-2 bg-off-white text-terminal-slate lg:bg-terminal-slate lg:text-off-white"
             >
-              View Projects
+              Ver Proyectos
               <ArrowDown className="w-4 h-4" />
             </button>
-            <button 
+            <button
               onClick={scrollToTech}
               className="btn-secondary border-off-white/50 text-off-white lg:border-terminal-slate lg:text-terminal-slate"
             >
-              Tech Stack
+              Tecnologías
             </button>
-            <a 
-              href="#" 
+            <a
+              href="#"
               className="micro-label text-off-white/80 lg:text-terminal-slate link-underline flex items-center gap-1"
             >
-              Download CV
+              Descargar CV
               <ChevronRight className="w-3 h-3" />
             </a>
           </div>
 
           {/* Stats */}
-          <div 
+          <div
             ref={statsRef}
             className="hidden lg:flex items-center gap-8 mb-8"
           >
@@ -287,48 +287,48 @@ export function HeroSection() {
               <div className="headline-sm text-accent-red">
                 <span className="stat-number" data-target="50">0</span>+
               </div>
-              <div className="micro-label text-text-secondary">Projects</div>
+              <div className="micro-label text-text-secondary">Proyectos</div>
             </div>
             <div className="w-px h-10 hairline" />
             <div>
               <div className="headline-sm text-accent-red">
                 <span className="stat-number" data-target="8">0</span>+
               </div>
-              <div className="micro-label text-text-secondary">Years Exp</div>
+              <div className="micro-label text-text-secondary">Años Exp</div>
             </div>
             <div className="w-px h-10 hairline" />
             <div>
               <div className="headline-sm text-accent-red">
                 <span className="stat-number" data-target="30">0</span>+
               </div>
-              <div className="micro-label text-text-secondary">Clients</div>
+              <div className="micro-label text-text-secondary">Clientes</div>
             </div>
           </div>
 
           {/* Social micro-row */}
-          <div 
+          <div
             ref={socialsRef}
             className="flex items-center gap-4 lg:gap-8"
           >
-            <a 
-              href="https://github.com" 
-              target="_blank" 
+            <a
+              href="https://github.com"
+              target="_blank"
               rel="noopener noreferrer"
               className="micro-label text-off-white/70 lg:text-text-secondary hover:text-accent-red transition-colors flex items-center gap-2"
             >
               <Github className="w-4 h-4" />
               <span className="hidden sm:inline">GITHUB</span>
             </a>
-            <a 
-              href="https://linkedin.com" 
-              target="_blank" 
+            <a
+              href="https://linkedin.com"
+              target="_blank"
               rel="noopener noreferrer"
               className="micro-label text-off-white/70 lg:text-text-secondary hover:text-accent-red transition-colors flex items-center gap-2"
             >
               <Linkedin className="w-4 h-4" />
               <span className="hidden sm:inline">LINKEDIN</span>
             </a>
-            <a 
+            <a
               href="mailto:hello@kaledmolina.dev"
               className="micro-label text-off-white/70 lg:text-text-secondary hover:text-accent-red transition-colors flex items-center gap-2"
             >

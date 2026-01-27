@@ -8,46 +8,46 @@ gsap.registerPlugin(ScrollTrigger);
 const services = [
   {
     icon: Code,
-    title: 'Web Applications',
-    description: 'Full-stack Laravel apps with modern UI/UX'
+    title: 'Aplicaciones Web',
+    description: 'Apps Laravel full-stack con UI/UX moderna'
   },
   {
     icon: Server,
-    title: 'APIs & Integrations',
-    description: 'RESTful APIs and third-party integrations'
+    title: 'APIs e Integraciones',
+    description: 'APIs RESTful e integraciones con terceros'
   },
   {
     icon: Layout,
-    title: 'Code Audits',
-    description: 'Performance and security reviews'
+    title: 'Auditorías de Código',
+    description: 'Revisiones de rendimiento y seguridad'
   },
   {
     icon: Users,
-    title: 'Team Support',
-    description: 'Mentoring and technical leadership'
+    title: 'Soporte de Equipo',
+    description: 'Mentoría y liderazgo técnico'
   },
   {
     icon: Sparkles,
-    title: 'UI/UX Design',
-    description: 'Beautiful, intuitive interfaces'
+    title: 'Diseño UI/UX',
+    description: 'Interfaces hermosas e intuitivas'
   },
   {
     icon: Cpu,
-    title: 'Cloud Architecture',
-    description: 'Scalable cloud-native solutions'
+    title: 'Arquitectura Cloud',
+    description: 'Soluciones nativas en la nube escalables'
   }
 ];
 
 const expertise = [
   {
     icon: Zap,
-    title: 'Performance First',
-    description: 'Optimized code that scales with your business'
+    title: 'Rendimiento Primero',
+    description: 'Código optimizado que escala con tu negocio'
   },
   {
     icon: Shield,
-    title: 'Security Focused',
-    description: 'Best practices for data protection'
+    title: 'Enfoque en Seguridad',
+    description: 'Mejores prácticas para protección de datos'
   }
 ];
 
@@ -145,8 +145,8 @@ export function AboutSection() {
   }, []);
 
   return (
-    <section 
-      ref={sectionRef} 
+    <section
+      ref={sectionRef}
       className="relative min-h-screen bg-off-white py-20 lg:py-32 z-20"
       id="about"
     >
@@ -154,40 +154,40 @@ export function AboutSection() {
       <div className="absolute top-1/2 right-0 w-[30vw] h-[40vh] bg-accent-red/5 blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-16 lg:mb-24">
-          
+
           {/* Left column */}
           <div ref={leftColumnRef}>
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-px bg-accent-red" />
-              <span className="micro-label text-accent-red">ABOUT ME</span>
+              <span className="micro-label text-accent-red">SOBRE MÍ</span>
             </div>
             <h2 className="headline-lg text-terminal-slate mb-6">
-              BUILDING DIGITAL EXPERIENCES
+              CREANDO EXPERIENCIAS DIGITALES
             </h2>
             <div className="space-y-4 body-text text-text-secondary">
               <p>
-                I'm a passionate fullstack developer with over 8 years of experience 
-                crafting digital solutions that make a difference. My journey began with 
-                PHP and Laravel, and has evolved to embrace modern technologies like 
-                Flutter for mobile development.
+                Soy un apasionado desarrollador fullstack con más de 8 años de experiencia
+                creando soluciones digitales que marcan la diferencia. Mi viaje comenzó con
+                PHP y Laravel, y ha evolucionado para abarcar tecnologías modernas como
+                Flutter para el desarrollo móvil.
               </p>
               <p>
-                I specialize in building scalable web applications, RESTful APIs, and 
-                cross-platform mobile apps. My approach combines clean architecture 
-                principles with agile methodologies to deliver robust, maintainable code.
+                Me especializo en construir aplicaciones web escalables, APIs RESTful y
+                apps móviles multiplataforma. Mi enfoque combina principios de arquitectura limpia
+                con metodologías ágiles para entregar código robusto y mantenible.
               </p>
               <p>
-                Whether it's a complex enterprise system or an innovative startup MVP, 
-                I bring the same level of dedication and attention to detail to every project.
+                Ya sea un sistema empresarial complejo o un MVP innovador para una startup,
+                aporto el mismo nivel de dedicación y atención al detalle en cada proyecto.
               </p>
             </div>
 
             {/* Expertise */}
             <div ref={expertiseRef} className="mt-8 space-y-4">
               {expertise.map((item) => (
-                <div 
+                <div
                   key={item.title}
                   className="expertise-item flex items-start gap-4 p-4 bg-white border border-terminal-slate/10"
                 >
@@ -205,12 +205,12 @@ export function AboutSection() {
 
           {/* Right column */}
           <div ref={rightColumnRef}>
-            <h3 className="micro-label text-text-secondary mb-6">WHAT I DO</h3>
-            
+            <h3 className="micro-label text-text-secondary mb-6">LO QUE HAGO</h3>
+
             {/* Services Grid */}
             <div ref={servicesRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {services.map((service) => (
-                <div 
+                <div
                   key={service.title}
                   className="service-card group"
                 >
@@ -230,15 +230,15 @@ export function AboutSection() {
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <div className="headline-sm text-accent-red">8+</div>
-                  <div className="micro-label text-off-white/60 mt-1">Years</div>
+                  <div className="micro-label text-off-white/60 mt-1">Años</div>
                 </div>
                 <div>
                   <div className="headline-sm text-accent-red">50+</div>
-                  <div className="micro-label text-off-white/60 mt-1">Projects</div>
+                  <div className="micro-label text-off-white/60 mt-1">Proyectos</div>
                 </div>
                 <div>
                   <div className="headline-sm text-accent-red">30+</div>
-                  <div className="micro-label text-off-white/60 mt-1">Clients</div>
+                  <div className="micro-label text-off-white/60 mt-1">Clientes</div>
                 </div>
               </div>
             </div>

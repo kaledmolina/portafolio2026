@@ -9,9 +9,9 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: 1,
-    title: 'Tenant Management Platform',
-    category: 'SaaS Platform',
-    description: 'A comprehensive multi-tenant dashboard with role-based access control, real-time notifications, automated billing workflows, and advanced analytics.',
+    title: 'Plataforma de Gestión de Inquilinos',
+    category: 'Plataforma SaaS',
+    description: 'Un panel multi-inquilino completo con control de acceso basado en roles, notificaciones en tiempo real y facturación automatizada.',
     image: '/project-01.jpg',
     tags: ['Laravel', 'Livewire', 'Alpine.js', 'Tailwind', 'PostgreSQL'],
     stats: { users: '2.5K', uptime: '99.9%' },
@@ -21,9 +21,9 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Real-Time Analytics Dashboard',
-    category: 'Data Visualization',
-    description: 'Event-driven charts with WebSocket updates, exportable reports, and customizable widgets built for performance and clarity.',
+    title: 'Panel de Análisis en Tiempo Real',
+    category: 'Visualización de Datos',
+    description: 'Gráficos dirigidos por eventos con actualizaciones WebSocket, reportes exportables y widgets personalizables.',
     image: '/project-02.jpg',
     tags: ['Laravel', 'React', 'PostgreSQL', 'Docker', 'Redis'],
     stats: { requests: '1M+', latency: '<50ms' },
@@ -33,9 +33,9 @@ const projects = [
   },
   {
     id: 3,
-    title: 'E-Commerce Platform',
-    category: 'Web Application',
-    description: 'Full-featured online store with payment integration, inventory management, and a seamless shopping experience.',
+    title: 'Plataforma de E-Commerce',
+    category: 'Aplicación Web',
+    description: 'Tienda en línea completa con integración de pagos, gestión de inventario y una experiencia de compra fluida.',
     image: '/project-03.jpg',
     tags: ['Laravel', 'Vue.js', 'Stripe', 'MySQL', 'AWS'],
     stats: { products: '10K+', orders: '50K+' },
@@ -45,9 +45,9 @@ const projects = [
   },
   {
     id: 4,
-    title: 'Mobile Banking App',
-    category: 'Mobile Application',
-    description: 'Secure fintech application with biometric authentication, real-time transactions, and investment tracking.',
+    title: 'App de Banca Móvil',
+    category: 'Aplicación Móvil',
+    description: 'Aplicación fintech segura con autenticación biométrica, transacciones en tiempo real y seguimiento de inversiones.',
     image: '/project-04.jpg',
     tags: ['Flutter', 'Dart', 'Firebase', 'REST API', 'Bloc'],
     stats: { downloads: '100K+', rating: '4.8' },
@@ -57,9 +57,9 @@ const projects = [
   },
   {
     id: 5,
-    title: 'Healthcare Management System',
-    category: 'Enterprise Software',
-    description: 'HIPAA-compliant patient management system with appointment scheduling, medical records, and billing integration.',
+    title: 'Sistema de Gestión de Salud',
+    category: 'Software Empresarial',
+    description: 'Sistema de gestión de pacientes compatible con HIPAA con programación de citas e historial médico.',
     image: '/project-05.jpg',
     tags: ['Laravel', 'React', 'PostgreSQL', 'Docker', 'FHIR'],
     stats: { patients: '50K+', clinics: '25' },
@@ -69,9 +69,9 @@ const projects = [
   },
   {
     id: 6,
-    title: 'Social Media Analytics',
-    category: 'Analytics Platform',
-    description: 'Influencer dashboard with follower analytics, engagement metrics, and content performance tracking.',
+    title: 'Análisis de Redes Sociales',
+    category: 'Plataforma de Análisis',
+    description: 'Panel de influencers con análisis de seguidores, métricas de participación y seguimiento de contenido.',
     image: '/project-06.jpg',
     tags: ['Node.js', 'React', 'MongoDB', 'GraphQL', 'AWS'],
     stats: { influencers: '5K+', data: '10M+' },
@@ -146,8 +146,8 @@ export function ProjectsGrid() {
   };
 
   return (
-    <section 
-      ref={sectionRef} 
+    <section
+      ref={sectionRef}
       className="relative min-h-screen bg-off-white py-20 lg:py-32 z-30"
       id="projects"
     >
@@ -155,49 +155,48 @@ export function ProjectsGrid() {
       <div className="absolute bottom-0 left-0 w-[30vw] h-[30vh] bg-accent-red/5 blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        
+
         {/* Header */}
         <div ref={headerRef} className="mb-12 lg:mb-20">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-px bg-accent-red" />
-            <span className="micro-label text-accent-red">PORTFOLIO</span>
+            <span className="micro-label text-accent-red">PORTAFOLIO</span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
               <h2 className="headline-lg text-terminal-slate mb-4">
-                SELECTED WORK
+                TRABAJOS SELECCIONADOS
               </h2>
               <p className="body-text text-text-secondary max-w-2xl">
-                A curated collection of projects showcasing my expertise in web development, 
-                mobile applications, and cloud architecture. Each project represents a unique 
-                challenge solved with clean, scalable code.
+                Una colección curada de proyectos que muestran mi experiencia en desarrollo web,
+                aplicaciones móviles y arquitectura en la nube. Cada proyecto representa un
+                desafío único resuelto con código limpio y escalable.
               </p>
             </div>
             <div className="flex items-center gap-6">
               <div className="text-center">
                 <div className="headline-sm text-accent-red">50+</div>
-                <div className="micro-label text-text-secondary">Projects</div>
+                <div className="micro-label text-text-secondary">Proyectos</div>
               </div>
               <div className="w-px h-10 hairline" />
               <div className="text-center">
                 <div className="headline-sm text-accent-red">6</div>
-                <div className="micro-label text-text-secondary">Countries</div>
+                <div className="micro-label text-text-secondary">Países</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Projects Grid */}
-        <div 
+        <div
           ref={gridRef}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
           {projects.map((project) => (
-            <div 
+            <div
               key={project.id}
-              className={`project-card group cursor-pointer ${
-                project.featured ? 'md:col-span-2 lg:col-span-1' : ''
-              }`}
+              className={`project-card group cursor-pointer ${project.featured ? 'md:col-span-2 lg:col-span-1' : ''
+                }`}
               onClick={() => openModal(project)}
             >
               {/* Image Container */}
@@ -207,14 +206,14 @@ export function ProjectsGrid() {
                   alt={project.title}
                   className="project-image w-full h-full object-cover transition-transform duration-700 ease-out"
                 />
-                
+
                 {/* Overlay */}
                 <div className="project-overlay absolute inset-0 bg-terminal-slate/80 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-6">
                   <p className="body-text-sm text-off-white/80 mb-4 line-clamp-3">
                     {project.description}
                   </p>
                   <div className="flex items-center gap-2 text-accent-red micro-label">
-                    VIEW PROJECT
+                    VER PROYECTO
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -222,7 +221,7 @@ export function ProjectsGrid() {
                 {/* Featured Badge */}
                 {project.featured && (
                   <div className="absolute top-4 left-4 px-3 py-1 bg-accent-red text-off-white micro-label">
-                    FEATURED
+                    DESTACADO
                   </div>
                 )}
               </div>
@@ -235,11 +234,11 @@ export function ProjectsGrid() {
                 <h3 className="headline-sm text-terminal-slate mb-3 group-hover:text-accent-red transition-colors">
                   {project.title}
                 </h3>
-                
+
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.slice(0, 3).map((tag) => (
-                    <span 
+                    <span
                       key={tag}
                       className="tech-tag text-xs"
                     >
@@ -269,29 +268,29 @@ export function ProjectsGrid() {
 
         {/* View All Button */}
         <div className="mt-12 lg:mt-16 text-center">
-          <a 
+          <a
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary inline-flex items-center gap-2"
           >
             <Github className="w-4 h-4" />
-            View All on GitHub
+            Ver todo en GitHub
           </a>
         </div>
       </div>
 
       {/* Project Modal */}
       {selectedProject && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 lg:p-8"
           onClick={closeModal}
         >
           {/* Backdrop */}
           <div className="absolute inset-0 bg-terminal-slate/90 backdrop-blur-sm" />
-          
+
           {/* Modal Content */}
-          <div 
+          <div
             className="relative bg-off-white w-full max-w-4xl max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
@@ -329,10 +328,10 @@ export function ProjectsGrid() {
 
               {/* Tags */}
               <div className="mb-8">
-                <span className="micro-label text-text-secondary mb-3 block">TECHNOLOGIES</span>
+                <span className="micro-label text-text-secondary mb-3 block">TECNOLOGÍAS</span>
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.tags.map((tag) => (
-                    <span 
+                    <span
                       key={tag}
                       className="tech-tag"
                     >
@@ -344,7 +343,7 @@ export function ProjectsGrid() {
 
               {/* Stats */}
               <div className="mb-8 p-4 bg-terminal-slate/5">
-                <span className="micro-label text-text-secondary mb-3 block">KEY METRICS</span>
+                <span className="micro-label text-text-secondary mb-3 block">MÉTRICAS CLAVE</span>
                 <div className="flex flex-wrap gap-6">
                   {Object.entries(selectedProject.stats).map(([key, value]) => (
                     <div key={key}>
@@ -357,19 +356,19 @@ export function ProjectsGrid() {
 
               {/* Actions */}
               <div className="flex flex-wrap gap-4">
-                <a 
+                <a
                   href={selectedProject.live}
                   className="btn-primary flex items-center gap-2"
                 >
                   <ExternalLink className="w-4 h-4" />
-                  Live Demo
+                  Demo en Vivo
                 </a>
-                <a 
+                <a
                   href={selectedProject.github}
                   className="btn-secondary flex items-center gap-2"
                 >
                   <Github className="w-4 h-4" />
-                  View Code
+                  Ver Código
                 </a>
               </div>
             </div>

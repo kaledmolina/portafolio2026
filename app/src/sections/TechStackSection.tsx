@@ -37,7 +37,7 @@ const techCategories = [
     ]
   },
   {
-    name: 'Database & Cloud',
+    name: 'Base de Datos y Nube',
     color: '#10B981',
     technologies: [
       { name: 'PostgreSQL', level: 90, icon: 'Pg' },
@@ -49,7 +49,7 @@ const techCategories = [
 ];
 
 const additionalTools = [
-  'Git', 'CI/CD', 'REST APIs', 'GraphQL', 'WebSockets', 
+  'Git', 'CI/CD', 'REST APIs', 'GraphQL', 'WebSockets',
   'Nginx', 'Linux', 'Testing', 'Agile', 'Figma'
 ];
 
@@ -153,48 +153,48 @@ export function TechStackSection() {
   }, []);
 
   return (
-    <section 
-      ref={sectionRef} 
+    <section
+      ref={sectionRef}
       className="relative min-h-screen bg-off-white py-20 lg:py-32 z-20"
       id="tech-stack"
     >
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[40vw] h-[40vh] bg-accent-red/5 blur-[150px] pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        
+
         {/* Header */}
         <div ref={headerRef} className="mb-12 lg:mb-20">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-px bg-accent-red" />
-            <span className="micro-label text-accent-red">EXPERTISE</span>
+            <span className="micro-label text-accent-red">EXPERIENCIA</span>
           </div>
           <h2 className="headline-lg text-terminal-slate mb-4">
-            TECH STACK
+            STACK TECNOLÓGICO
           </h2>
           <p className="body-text text-text-secondary max-w-2xl">
-            A comprehensive toolkit for building modern, scalable applications. 
-            From backend architecture to mobile experiences, I leverage the right 
-            technologies for each project's unique requirements.
+            Un conjunto completo de herramientas para construir aplicaciones modernas y escalables.
+            Desde la arquitectura backend hasta experiencias móviles, aprovecho las tecnologías
+            adecuadas para los requisitos únicos de cada proyecto.
           </p>
         </div>
 
         {/* Tech Categories Grid */}
-        <div 
+        <div
           ref={categoriesRef}
           className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16"
         >
           {techCategories.map((category, catIndex) => (
-            <div 
+            <div
               key={category.name}
               className="category-card bg-white border border-terminal-slate/10 p-6 lg:p-8 hover:border-accent-red/30 transition-all duration-300 hover:shadow-xl"
-              style={{ 
+              style={{
                 boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
               }}
             >
               {/* Category Header */}
               <div className="flex items-center gap-3 mb-6">
-                <div 
+                <div
                   className="w-3 h-3 rounded-full"
                   style={{ backgroundColor: category.color }}
                 />
@@ -211,7 +211,7 @@ export function TechStackSection() {
                     <div key={tech.name} className="group">
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-3">
-                          <div 
+                          <div
                             className="w-8 h-8 flex items-center justify-center text-xs font-mono font-bold text-white"
                             style={{ backgroundColor: category.color }}
                           >
@@ -227,11 +227,11 @@ export function TechStackSection() {
                       </div>
                       {/* Progress bar */}
                       <div className="h-1.5 bg-terminal-slate/10 overflow-hidden">
-                        <div 
+                        <div
                           ref={(el) => { progressRefs.current[globalIndex] = el; }}
                           data-level={tech.level}
                           className="h-full transition-all duration-1000 ease-out"
-                          style={{ 
+                          style={{
                             backgroundColor: category.color,
                             width: '0%'
                           }}
@@ -248,11 +248,11 @@ export function TechStackSection() {
         {/* Additional Tools */}
         <div ref={toolsRef}>
           <h3 className="micro-label text-text-secondary mb-6 text-center">
-            ADDITIONAL TOOLS & PRACTICES
+            HERRAMIENTAS Y PRÁCTICAS ADICIONALES
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
             {additionalTools.map((tool) => (
-              <span 
+              <span
                 key={tool}
                 className="tool-tag px-4 py-2 border border-terminal-slate/20 text-terminal-slate micro-label hover:border-accent-red hover:text-accent-red hover:bg-accent-red/5 transition-all duration-300 cursor-default"
               >
@@ -265,29 +265,29 @@ export function TechStackSection() {
         {/* Flutter Highlight */}
         <div className="mt-16 lg:mt-24 p-6 lg:p-10 bg-terminal-slate text-off-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-accent-red/20 blur-[100px] pointer-events-none" />
-          
+
           <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-4xl lg:text-5xl font-bold text-accent-red">F</span>
-                <span className="micro-label text-off-white/60">MOBILE DEVELOPMENT</span>
+                <span className="micro-label text-off-white/60">DESARROLLO MÓVIL</span>
               </div>
               <h3 className="headline-md text-off-white mb-2">
-                FLUTTER SPECIALIST
+                ESPECIALISTA EN FLUTTER
               </h3>
               <p className="body-text text-off-white/70 max-w-xl">
-                Building beautiful, natively compiled applications for mobile, web, and desktop 
-                from a single codebase. Fast development, expressive UI, and native performance.
+                Construyendo aplicaciones hermosas y compiladas nativamente para móvil, web y escritorio
+                desde una única base de código. Desarrollo rápido, UI expresiva y rendimiento nativo.
               </p>
             </div>
             <div className="flex items-center gap-8">
               <div className="text-center">
                 <div className="headline-sm text-accent-red">15+</div>
-                <div className="micro-label text-off-white/60">Apps Published</div>
+                <div className="micro-label text-off-white/60">Apps Publicadas</div>
               </div>
               <div className="text-center">
                 <div className="headline-sm text-accent-red">50K+</div>
-                <div className="micro-label text-off-white/60">Downloads</div>
+                <div className="micro-label text-off-white/60">Descargas</div>
               </div>
             </div>
           </div>

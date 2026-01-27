@@ -109,7 +109,7 @@ export function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
@@ -119,14 +119,14 @@ export function ContactSection() {
 
   const contactInfo = [
     { icon: Mail, label: 'Email', value: 'hello@kaledmolina.dev', href: 'mailto:hello@kaledmolina.dev' },
-    { icon: Phone, label: 'Phone', value: '+51 999 888 777', href: 'tel:+51999888777' },
-    { icon: MapPin, label: 'Location', value: 'Lima, Peru', href: '#' },
-    { icon: Calendar, label: 'Availability', value: 'Open to work', href: '#' },
+    { icon: Phone, label: 'Teléfono', value: '+51 999 888 777', href: 'tel:+51999888777' },
+    { icon: MapPin, label: 'Ubicación', value: 'Lima, Perú', href: '#' },
+    { icon: Calendar, label: 'Disponibilidad', value: 'Disponible', href: '#' },
   ];
 
   return (
-    <section 
-      ref={sectionRef} 
+    <section
+      ref={sectionRef}
       className="relative min-h-screen bg-terminal-slate z-50 py-20 lg:py-32"
       id="contact"
     >
@@ -135,29 +135,29 @@ export function ContactSection() {
       <div className="absolute bottom-0 left-0 w-[30vw] h-[30vh] bg-accent-red/5 blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        
+
         {/* Header */}
         <div ref={headlineRef} className="mb-12 lg:mb-20">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-px bg-accent-red" />
-            <span className="micro-label text-accent-red">GET IN TOUCH</span>
+            <span className="micro-label text-accent-red">CONTÁCTAME</span>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
               <h2 className="headline-lg text-off-white leading-tight">
-                LET'S BUILD
+                CONSTRUYAMOS
               </h2>
               <h2 className="headline-lg text-off-white leading-tight">
-                SOMETHING
+                ALGO
               </h2>
               <h2 className="headline-lg text-accent-red leading-tight">
-                AMAZING.
+                ASOMBROSO.
               </h2>
             </div>
             <div className="flex items-end">
               <p className="body-text text-off-white/70 max-w-md">
-                Have a project in mind? Let's discuss how we can work together to bring 
-                your ideas to life. I'm always open to new opportunities and collaborations.
+                ¿Tienes un proyecto en mente? Discutamos cómo podemos trabajar juntos
+                para dar vida a tus ideas. Siempre estoy abierto a nuevas oportunidades y colaboraciones.
               </p>
             </div>
           </div>
@@ -165,7 +165,7 @@ export function ContactSection() {
 
         {/* Content Grid */}
         <div ref={contentRef} className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
-          
+
           {/* Left - Contact Info */}
           <div ref={infoRef} className="lg:col-span-2 space-y-4">
             {contactInfo.map((item) => (
@@ -188,7 +188,7 @@ export function ContactSection() {
 
             {/* Social Links */}
             <div className="pt-6">
-              <span className="micro-label text-off-white/50 mb-4 block">FOLLOW ME</span>
+              <span className="micro-label text-off-white/50 mb-4 block">SÍGUEME</span>
               <div className="flex items-center gap-3">
                 {[
                   { icon: Github, href: 'https://github.com', label: 'GitHub' },
@@ -218,20 +218,20 @@ export function ContactSection() {
                   <Send className="w-8 h-8" />
                 </div>
                 <h3 className="headline-md text-off-white mb-4">
-                  MESSAGE SENT!
+                  ¡MENSAJE ENVIADO!
                 </h3>
                 <p className="body-text text-off-white/70 mb-6">
-                  Thank you for reaching out. I'll get back to you within 1-2 business days.
+                  Gracias por contactarme. Te responderé dentro de 1-2 días hábiles.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
                   className="btn-accent"
                 >
-                  Send Another Message
+                  Enviar Otro Mensaje
                 </button>
               </div>
             ) : (
-              <form 
+              <form
                 ref={formRef}
                 onSubmit={handleSubmit}
                 className="p-6 lg:p-10 bg-off-white/5 border border-off-white/10"
@@ -239,7 +239,7 @@ export function ContactSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                   <div className="form-field">
                     <label className="micro-label text-off-white/60 block mb-2">
-                      NAME
+                      NOMBRE
                     </label>
                     <input
                       type="text"
@@ -247,13 +247,13 @@ export function ContactSection() {
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
                       className="w-full bg-transparent border-b border-off-white/20 text-off-white py-3 focus:border-accent-red outline-none transition-colors body-text placeholder:text-off-white/30"
-                      placeholder="John Doe"
+                      placeholder="Juan Pérez"
                     />
                   </div>
 
                   <div className="form-field">
                     <label className="micro-label text-off-white/60 block mb-2">
-                      EMAIL
+                      CORREO
                     </label>
                     <input
                       type="email"
@@ -261,14 +261,14 @@ export function ContactSection() {
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
                       className="w-full bg-transparent border-b border-off-white/20 text-off-white py-3 focus:border-accent-red outline-none transition-colors body-text placeholder:text-off-white/30"
-                      placeholder="john@example.com"
+                      placeholder="juan@ejemplo.com"
                     />
                   </div>
                 </div>
 
                 <div className="form-field mb-6">
                   <label className="micro-label text-off-white/60 block mb-2">
-                    SUBJECT
+                    ASUNTO
                   </label>
                   <input
                     type="text"
@@ -276,13 +276,13 @@ export function ContactSection() {
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     required
                     className="w-full bg-transparent border-b border-off-white/20 text-off-white py-3 focus:border-accent-red outline-none transition-colors body-text placeholder:text-off-white/30"
-                    placeholder="Project Inquiry"
+                    placeholder="Consulta de Proyecto"
                   />
                 </div>
 
                 <div className="form-field mb-8">
                   <label className="micro-label text-off-white/60 block mb-2">
-                    MESSAGE
+                    MENSAJE
                   </label>
                   <textarea
                     value={formData.message}
@@ -290,7 +290,7 @@ export function ContactSection() {
                     required
                     rows={4}
                     className="w-full bg-transparent border-b border-off-white/20 text-off-white py-3 focus:border-accent-red outline-none transition-colors body-text resize-none placeholder:text-off-white/30"
-                    placeholder="Tell me about your project..."
+                    placeholder="Cuéntame sobre tu proyecto..."
                   />
                 </div>
 
@@ -303,18 +303,18 @@ export function ContactSection() {
                     {isSubmitting ? (
                       <>
                         <span className="w-4 h-4 border-2 border-off-white/30 border-t-off-white rounded-full animate-spin" />
-                        SENDING...
+                        ENVIANDO...
                       </>
                     ) : (
                       <>
-                        Send Message
+                        Enviar Mensaje
                         <Send className="w-4 h-4" />
                       </>
                     )}
                   </button>
-                  
+
                   <span className="micro-label text-off-white/40">
-                    Usually reply within 24 hours
+                    Usualmente respondo en 24 horas
                   </span>
                 </div>
               </form>
@@ -325,13 +325,13 @@ export function ContactSection() {
         {/* Footer */}
         <div className="mt-16 lg:mt-24 pt-8 border-t border-off-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="micro-label text-off-white/40">
-            © 2026 KALED MOLINA. ALL RIGHTS RESERVED.
+            © 2026 KALED MOLINA. TODOS LOS DERECHOS RESERVADOS.
           </div>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-2 micro-label text-off-white/60 hover:text-accent-red transition-colors"
           >
-            BACK TO TOP
+            VOLVER ARRIBA
             <ArrowUpRight className="w-4 h-4" />
           </button>
         </div>

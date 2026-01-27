@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const navItems = [
-  { label: 'Home', id: 'hero' },
-  { label: 'About', id: 'about' },
-  { label: 'Tech Stack', id: 'tech-stack' },
-  { label: 'Projects', id: 'projects' },
-  { label: 'Contact', id: 'contact' },
+  { label: 'Inicio', id: 'hero' },
+  { label: 'Sobre Mí', id: 'about' },
+  { label: 'Tecnologías', id: 'tech-stack' },
+  { label: 'Proyectos', id: 'projects' },
+  { label: 'Contáctame', id: 'contact' },
 ];
 
 export function Navigation() {
@@ -112,7 +112,7 @@ export function Navigation() {
 
             {/* Role - Desktop */}
             <div className="hidden xl:block micro-label text-text-secondary">
-              FULLSTACK DEVELOPER
+              DESARROLLADOR FULLSTACK
             </div>
 
             {/* Mobile Menu Button */}
@@ -209,7 +209,7 @@ export function Navigation() {
         © 2026
       </div>
       <div className="fixed bottom-5 right-6 lg:right-10 z-30 micro-label text-text-secondary hidden lg:block">
-        BASED IN LIMA
+        BASADO EN LIMA
       </div>
     </>
   );
