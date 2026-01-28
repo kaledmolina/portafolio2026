@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Navigation } from './components/Navigation';
@@ -11,6 +11,14 @@ import { ContactSection } from './sections/ContactSection';
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  // Force scroll to top on mount
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  }, []);
+
   // Global scroll snap configuration
   useEffect(() => {
     // Wait for all ScrollTriggers to be created
@@ -18,9 +26,9 @@ function App() {
       const pinned = ScrollTrigger.getAll()
         .filter(st => st.vars.pin)
         .sort((a, b) => a.start - b.start);
-      
+
       const maxScroll = ScrollTrigger.maxScroll(window);
-      
+
       if (!maxScroll || pinned.length === 0) return;
 
       // Build ranges and snap targets from pinned sections
@@ -38,7 +46,7 @@ function App() {
             const inPinned = pinnedRanges.some(
               r => value >= r.start - 0.08 && value <= r.end + 0.08
             );
-            
+
             if (!inPinned) return value; // Flowing section: free scroll
 
             // Find nearest pinned center
@@ -46,7 +54,7 @@ function App() {
               Math.abs(r.center - value) < Math.abs(closest - value) ? r.center : closest,
               pinnedRanges[0]?.center ?? 0
             );
-            
+
             return target;
           },
           duration: { min: 0.15, max: 0.4 },

@@ -214,7 +214,7 @@ export function HeroSection() {
         <div className="relative w-full lg:w-[34vw] h-[40vh] lg:h-full flex items-center justify-center lg:justify-start lg:pl-[6vw]">
           <img
             ref={portraitRef}
-            src="/hero-portrait.jpg"
+            src="/hero-portrait.png"
             alt="Kaled Molina"
             className="w-[60%] lg:w-[28vw] h-[80%] lg:h-[70vh] object-cover shadow-2xl"
           />
