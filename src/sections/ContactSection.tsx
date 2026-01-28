@@ -118,7 +118,7 @@ export function ContactSection() {
   };
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'hello@kaledmolina.dev', href: 'mailto:hello@kaledmolina.dev' },
+    { icon: Mail, label: 'Email', value: 'kaledmoly@gmail.com', href: 'mailto:kaledmoly@gmail.com' },
     { icon: Phone, label: 'Teléfono', value: '+51 999 888 777', href: 'tel:+51999888777' },
     { icon: MapPin, label: 'Ubicación', value: 'Lima, Perú', href: '#' },
     { icon: Calendar, label: 'Disponibilidad', value: 'Disponible', href: '#' },
@@ -191,7 +191,7 @@ export function ContactSection() {
               <span className="micro-label text-off-white/50 mb-4 block">SÍGUEME</span>
               <div className="flex items-center gap-3">
                 {[
-                  { icon: Github, href: 'https://github.com', label: 'GitHub' },
+                  { icon: Github, href: 'https://github.com/kaledmolina', label: 'GitHub' },
                   { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
                   { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
                 ].map((social) => (

@@ -168,7 +168,7 @@ export function AboutSection() {
             </h2>
             <div className="space-y-4 body-text text-text-secondary">
               <p>
-                Soy un apasionado desarrollador fullstack con más de 8 años de experiencia
+                Soy un apasionado desarrollador fullstack con más de 3 años de experiencia
                 creando soluciones digitales que marcan la diferencia. Mi viaje comenzó con
                 PHP y Laravel, y ha evolucionado para abarcar tecnologías modernas como
                 Flutter para el desarrollo móvil.
@@ -229,11 +229,11 @@ export function AboutSection() {
             <div className="mt-8 p-6 bg-terminal-slate text-off-white">
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
-                  <div className="headline-sm text-accent-red">8+</div>
+                  <div className="headline-sm text-accent-red">3+</div>
                   <div className="micro-label text-off-white/60 mt-1">Años</div>
                 </div>
                 <div>
-                  <div className="headline-sm text-accent-red">50+</div>
+                  <div className="headline-sm text-accent-red">70+</div>
                   <div className="micro-label text-off-white/60 mt-1">Proyectos</div>
                 </div>
                 <div>

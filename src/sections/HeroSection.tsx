@@ -285,14 +285,14 @@ export function HeroSection() {
           >
             <div>
               <div className="headline-sm text-accent-red">
-                <span className="stat-number" data-target="50">0</span>+
+                <span className="stat-number" data-target="70">0</span>+
               </div>
               <div className="micro-label text-text-secondary">Proyectos</div>
             </div>
             <div className="w-px h-10 hairline" />
             <div>
               <div className="headline-sm text-accent-red">
-                <span className="stat-number" data-target="8">0</span>+
+                <span className="stat-number" data-target="3">0</span>+
               </div>
               <div className="micro-label text-text-secondary">Años Exp</div>
             </div>
@@ -311,7 +311,7 @@ export function HeroSection() {
             className="flex items-center gap-4 lg:gap-8"
           >
             <a
-              href="https://github.com"
+              href="https://github.com/kaledmolina"
               target="_blank"
               rel="noopener noreferrer"
               className="micro-label text-off-white/70 lg:text-text-secondary hover:text-accent-red transition-colors flex items-center gap-2"
@@ -329,7 +329,7 @@ export function HeroSection() {
               <span className="hidden sm:inline">LINKEDIN</span>
             </a>
             <a
-              href="mailto:hello@kaledmolina.dev"
+              href="mailto:kaledmoly@gmail.com"
               className="micro-label text-off-white/70 lg:text-text-secondary hover:text-accent-red transition-colors flex items-center gap-2"
             >
               <Mail className="w-4 h-4" />

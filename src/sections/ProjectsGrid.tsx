@@ -184,7 +184,7 @@ export function ProjectsGrid() {
             </div>
             <div className="flex items-center gap-6">
               <div className="text-center">
-                <div className="headline-sm text-accent-red">50+</div>
+                <div className="headline-sm text-accent-red">70+</div>
                 <div className="micro-label text-text-secondary">Proyectos</div>
               </div>
               <div className="w-px h-10 hairline" />
@@ -278,7 +278,7 @@ export function ProjectsGrid() {
         {/* View All Button */}
         <div className="mt-12 lg:mt-16 text-center">
           <a
-            href="https://github.com"
+            href="https://github.com/kaledmolina"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary inline-flex items-center gap-2"
