@@ -33,6 +33,7 @@ export function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     subject: '',
     message: ''
   });
@@ -158,7 +159,7 @@ export function ContactSection() {
 
       if (response.ok) {
         setSubmitted(true);
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       } else {
         console.error('API Error');
         alert('Hubo un error al enviar el mensaje. Inténtalo de nuevo.');
@@ -294,10 +295,10 @@ export function ContactSection() {
               >
                 {/* Connection Status Indicator */}
                 <div className={`mb-6 p-2 text-xs font-mono flex items-center gap-2 rounded border ${serverStatus === 'connected'
-                    ? 'bg-green-500/10 border-green-500/20 text-green-400'
-                    : serverStatus === 'error'
-                      ? 'bg-red-500/10 border-red-500/20 text-red-400'
-                      : 'bg-yellow-500/10 border-yellow-500/20 text-yellow-400'
+                  ? 'bg-green-500/10 border-green-500/20 text-green-400'
+                  : serverStatus === 'error'
+                    ? 'bg-red-500/10 border-red-500/20 text-red-400'
+                    : 'bg-yellow-500/10 border-yellow-500/20 text-yellow-400'
                   }`}>
                   {serverStatus === 'connected' ? <CheckCircle className="w-4 h-4" /> : <WifiOff className="w-4 h-4" />}
                   {serverStatus === 'connected' ? 'API CONNECTED' : serverStatus === 'error' ? 'API DISCONNECTED' : 'CHECKING API...'}
@@ -328,6 +329,19 @@ export function ContactSection() {
                       required
                       className="w-full bg-transparent border-b border-off-white/20 text-off-white py-3 focus:border-accent-red outline-none transition-colors body-text placeholder:text-off-white/30"
                       placeholder="juan@ejemplo.com"
+                    />
+                  </div>
+
+                  <div className="form-field">
+                    <label className="micro-label text-off-white/60 block mb-2">
+                      CELULAR
+                    </label>
+                    <input
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full bg-transparent border-b border-off-white/20 text-off-white py-3 focus:border-accent-red outline-none transition-colors body-text placeholder:text-off-white/30"
+                      placeholder="+57 300 123 4567"
                     />
                   </div>
                 </div>
