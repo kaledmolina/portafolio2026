@@ -1,7 +1,7 @@
-import { useRef, useLayoutEffect, useState } from 'react';
+import { useRef, useLayoutEffect, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Send, Github, Linkedin, Mail, MapPin, Phone, Calendar, ArrowUpRight } from 'lucide-react';
+import { Send, Github, Linkedin, Mail, MapPin, Phone, Calendar, ArrowUpRight, CheckCircle, WifiOff } from 'lucide-react';
 
 const XIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -38,6 +38,24 @@ export function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [serverStatus, setServerStatus] = useState<'checking' | 'connected' | 'error'>('checking');
+
+  useEffect(() => {
+    const checkServer = async () => {
+      try {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/health`);
+        if (res.ok) {
+          setServerStatus('connected');
+        } else {
+          setServerStatus('error');
+        }
+      } catch (error) {
+        console.error('Health check failed', error);
+        setServerStatus('error');
+      }
+    };
+    checkServer();
+  }, []);
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
@@ -274,6 +292,16 @@ export function ContactSection() {
                 onSubmit={handleSubmit}
                 className="p-6 lg:p-10 bg-off-white/5 border border-off-white/10"
               >
+                {/* Connection Status Indicator */}
+                <div className={`mb-6 p-2 text-xs font-mono flex items-center gap-2 rounded border ${serverStatus === 'connected'
+                    ? 'bg-green-500/10 border-green-500/20 text-green-400'
+                    : serverStatus === 'error'
+                      ? 'bg-red-500/10 border-red-500/20 text-red-400'
+                      : 'bg-yellow-500/10 border-yellow-500/20 text-yellow-400'
+                  }`}>
+                  {serverStatus === 'connected' ? <CheckCircle className="w-4 h-4" /> : <WifiOff className="w-4 h-4" />}
+                  {serverStatus === 'connected' ? 'API CONNECTED' : serverStatus === 'error' ? 'API DISCONNECTED' : 'CHECKING API...'}
+                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                   <div className="form-field">
                     <label className="micro-label text-off-white/60 block mb-2">
