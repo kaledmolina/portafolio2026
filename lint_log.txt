@@ -1,0 +1,54 @@
+
+> my-app@0.0.0 lint
+> eslint .
+
+
+/home/administrador/proyectos/portafolio2026/portafolio2026/src/components/ui/badge.tsx
+  46:17  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/home/administrador/proyectos/portafolio2026/portafolio2026/src/components/ui/button-group.tsx
+  82:3  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/home/administrador/proyectos/portafolio2026/portafolio2026/src/components/ui/button.tsx
+  62:18  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/home/administrador/proyectos/portafolio2026/portafolio2026/src/components/ui/form.tsx
+  159:3  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/home/administrador/proyectos/portafolio2026/portafolio2026/src/components/ui/navigation-menu.tsx
+  167:3  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/home/administrador/proyectos/portafolio2026/portafolio2026/src/components/ui/sidebar.tsx
+  611:26  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+/home/administrador/proyectos/portafolio2026/portafolio2026/src/components/ui/sidebar.tsx:611:26
+  609 |   // Random width between 50 to 90%.
+  610 |   const width = React.useMemo(() => {
+> 611 |     return `${Math.floor(Math.random() * 40) + 50}%`
+      |                          ^^^^^^^^^^^^^ Cannot call impure function
+  612 |   }, [])
+  613 |
+  614 |   return (  react-hooks/purity
+  725:3   error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     react-refresh/only-export-components
+
+/home/administrador/proyectos/portafolio2026/portafolio2026/src/components/ui/toggle.tsx
+  45:18  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/home/administrador/proyectos/portafolio2026/portafolio2026/src/sections/ProjectsGrid.tsx
+  140:5  error  Error: This value cannot be modified
+
+Modifying a variable defined outside a component or hook is not allowed. Consider using an effect.
+
+/home/administrador/proyectos/portafolio2026/portafolio2026/src/sections/ProjectsGrid.tsx:140:5
+  138 |   const openModal = (project: typeof projects[0]) => {
+  139 |     setSelectedProject(project);
+> 140 |     document.body.style.overflow = 'hidden';
+      |     ^^^^^^^^^^^^^^^^^^^ value cannot be modified
+  141 |   };
+  142 |
+  143 |   const closeModal = () => {  react-hooks/immutability
+
+✖ 9 problems (9 errors, 0 warnings)
+

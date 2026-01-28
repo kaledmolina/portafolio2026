@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect, useState } from 'react';
+import { useRef, useLayoutEffect, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, ExternalLink, Github, X } from 'lucide-react';
@@ -135,14 +135,23 @@ export function ProjectsGrid() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedProject]);
+
   const openModal = (project: typeof projects[0]) => {
     setSelectedProject(project);
-    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     setSelectedProject(null);
-    document.body.style.overflow = 'auto';
   };
 
   return (
