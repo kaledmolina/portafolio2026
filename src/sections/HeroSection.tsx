@@ -320,7 +320,7 @@ export function HeroSection() {
               <span className="hidden sm:inline">GITHUB</span>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/kaled-molina-051a471a3/?skipRedirect=true"
               target="_blank"
               rel="noopener noreferrer"
               className="micro-label text-off-white/70 lg:text-text-secondary hover:text-accent-red transition-colors flex items-center gap-2"

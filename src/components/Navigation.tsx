@@ -26,7 +26,7 @@ export function Navigation() {
         if (section) {
           const sectionTop = section.offsetTop;
           const sectionBottom = sectionTop + section.offsetHeight;
-          
+
           if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
             setActiveSection(navItems[index].id);
           }
@@ -73,17 +73,16 @@ export function Navigation() {
   return (
     <>
       {/* Main Navigation */}
-      <header 
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          isScrolled 
-            ? 'bg-off-white/95 backdrop-blur-md shadow-sm' 
+      <header
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled
+            ? 'bg-off-white/95 backdrop-blur-md shadow-sm'
             : 'bg-transparent'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <button 
+            <button
               onClick={() => scrollToSection('hero')}
               className="micro-label text-terminal-slate hover:text-accent-red transition-colors"
             >
@@ -96,11 +95,10 @@ export function Navigation() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`micro-label transition-colors relative ${
-                    activeSection === item.id 
-                      ? 'text-accent-red' 
+                  className={`micro-label transition-colors relative ${activeSection === item.id
+                      ? 'text-accent-red'
                       : 'text-text-secondary hover:text-terminal-slate'
-                  }`}
+                    }`}
                 >
                   {item.label}
                   {activeSection === item.id && (
@@ -128,24 +126,21 @@ export function Navigation() {
       </header>
 
       {/* Mobile Menu Overlay */}
-      <div 
-        className={`fixed inset-0 z-40 lg:hidden transition-all duration-500 ${
-          isMenuOpen ? 'visible' : 'invisible'
-        }`}
+      <div
+        className={`fixed inset-0 z-40 lg:hidden transition-all duration-500 ${isMenuOpen ? 'visible' : 'invisible'
+          }`}
       >
         {/* Backdrop */}
-        <div 
-          className={`absolute inset-0 bg-terminal-slate/90 backdrop-blur-sm transition-opacity duration-500 ${
-            isMenuOpen ? 'opacity-100' : 'opacity-0'
-          }`}
+        <div
+          className={`absolute inset-0 bg-terminal-slate/90 backdrop-blur-sm transition-opacity duration-500 ${isMenuOpen ? 'opacity-100' : 'opacity-0'
+            }`}
           onClick={() => setIsMenuOpen(false)}
         />
-        
+
         {/* Menu Content */}
-        <div 
-          className={`absolute right-0 top-0 h-full w-[80%] max-w-sm bg-off-white shadow-2xl transition-transform duration-500 ease-out ${
-            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
+        <div
+          className={`absolute right-0 top-0 h-full w-[80%] max-w-sm bg-off-white shadow-2xl transition-transform duration-500 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            }`}
         >
           <div className="flex flex-col h-full p-8">
             {/* Close button */}
@@ -163,9 +158,9 @@ export function Navigation() {
             <nav className="flex-1">
               <ul className="space-y-6">
                 {navItems.map((item, index) => (
-                  <li 
+                  <li
                     key={item.id}
-                    style={{ 
+                    style={{
                       transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms',
                       opacity: isMenuOpen ? 1 : 0,
                       transform: isMenuOpen ? 'translateX(0)' : 'translateX(20px)',
@@ -174,11 +169,10 @@ export function Navigation() {
                   >
                     <button
                       onClick={() => scrollToSection(item.id)}
-                      className={`headline-sm text-left w-full transition-colors ${
-                        activeSection === item.id 
-                          ? 'text-accent-red' 
+                      className={`headline-sm text-left w-full transition-colors ${activeSection === item.id
+                          ? 'text-accent-red'
                           : 'text-terminal-slate hover:text-accent-red'
-                      }`}
+                        }`}
                     >
                       {item.label}
                     </button>
@@ -188,9 +182,9 @@ export function Navigation() {
             </nav>
 
             {/* Footer Info */}
-            <div 
+            <div
               className="pt-8 border-t border-terminal-slate/10"
-              style={{ 
+              style={{
                 opacity: isMenuOpen ? 1 : 0,
                 transition: 'opacity 0.4s ease 0.3s'
               }}
@@ -208,9 +202,7 @@ export function Navigation() {
       <div className="fixed bottom-5 left-6 lg:left-10 z-30 micro-label text-text-secondary hidden lg:block">
         © 2026
       </div>
-      <div className="fixed bottom-5 right-6 lg:right-10 z-30 micro-label text-text-secondary hidden lg:block">
-        BASADO EN LIMA
-      </div>
+
     </>
   );
 }
